@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var array1 = [10, 12, 14, 6, 5, 3];
+
+        var total = 0;
+        var highest = array1[0];
+        var lowest = array1[0];
+        for (var i = 0; i < array1.length; i++) {
+            document.write(array1[i] + "<br>");
+            
+            // total = total + array1[i];
+            total += array1[i];
+
+            if (array1[i] > highest) {
+                highest = array1[i];
+            }
+
+            if (array1[i] < lowest) {
+                lowest = array1[i];
+            }
+        }
+        var average = total / array1.length;
+
+        document.write("-----<br>");
+        document.write("Total: " + total + "<br>");
+        document.write("Avg: " + average + "<br>");
+        document.write("H: " + highest + "<br>");
+        document.write("L: " + lowest + "<br>");
+
+    </script>
+</body>
+</html>
