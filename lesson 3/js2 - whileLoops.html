@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+    // WHILE LOOP
+    
+    var secretCode = "1234";
+    var userInput = prompt("What's the code?");
+
+    var counter = 3;
+    while (userInput != secretCode) {
+        counter--;
+        if (counter == 0) {
+            break; // Exits the Loop immediatly
+        }
+        userInput = prompt("Wrong code! " + counter + " try(ies) left!");  
+    }
+
+    if (userInput == secretCode) {
+        document.write("Welcome!");
+    } else {
+        document.write("Access Denied!");
+    }
+
+    </script>
+</body>
+</html>

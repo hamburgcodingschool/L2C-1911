@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+        var number = 6; // TODO: ask the user for input later
+
+        var isPrime = true;
+
+        for (var i = 2; i <= Math.sqrt(number); i++) {
+            var remainder = number % i; 
+
+            if (remainder == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+
+
+        if (isPrime) {
+            document.write("You've got a Prime Bro!<br>");
+        } else {
+            document.write("Dude! That is like, so not a Prime...<br>");
+        }
+    
+    </script>
+</body>
+</html>
