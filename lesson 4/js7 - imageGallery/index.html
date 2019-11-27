@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #myImage {
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="images/simpsons1.png" id="myImage">
+    <br>
+    <button id="buttonUp"> + </button>
+    <button id="buttonDown"> - </button>    
+
+    <script>
+        var images = [
+            "images/simpsons1.png",
+            "images/simpsons2.png",
+            "images/simpsons3.jpg",
+            "images/simpsons4.jpg"
+        ];
+
+        var myImage = document.getElementById("myImage");
+        var buttonUp = document.getElementById("buttonUp");
+        var buttonDown = document.getElementById("buttonDown");
+
+        var counter = 0;     
+
+        buttonUp.addEventListener("click", function () {
+            counter++;
+            if (counter > images.length -1) {
+                counter = 0;
+            }
+            console.log(counter);
+            updateImage();
+        });
+
+        buttonDown.addEventListener("click", function () {
+            counter--;
+            if (counter < 0) {
+                counter = images.length - 1;
+            }
+            console.log(counter);
+            updateImage();
+        });
+
+
+        function updateImage() {
+            
+            myImage.src = images[counter];
+        }
+
+        updateImage();
+    </script>
+</body>
+</html>

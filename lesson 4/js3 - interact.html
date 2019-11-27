@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="myTitle">DOCUMENT OBJECT MODEL</h1>
+
+    <button id="myButton">Do something!</button>
+
+    <script>
+
+        function theUserClicked() {
+            myButton.innerHTML = "Done!";
+            myTitle.style.color = "green";
+            myTitle.innerHTML += "!";
+        }
+
+       var myTitle = document.getElementById("myTitle");
+       var myButton = document.getElementById("myButton");
+
+       myButton.addEventListener("click", theUserClicked);
+
+    </script>
+</body>
+</html>

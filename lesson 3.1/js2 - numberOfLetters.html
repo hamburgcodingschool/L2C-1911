@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var someText = "Hello I am some text, I wonder how many letters I have?";
+
+        // REGULAR EXPRESSIONS ARE FUN... BUT A LITTLE CRAZY
+
+        var rx = /[a-zÀ-ž]/gi;
+        var modifiedText = someText.match(rx);
+        
+        document.write(modifiedText);
+        
+    </script>
+</body>
+</html>

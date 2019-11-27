@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="myCounter">0</p>
+
+    <button id="buttonUp"> + </button>
+    <button id="buttonDown"> - </button>
+
+
+    <script>
+        var myCounter = document.getElementById("myCounter");
+        var buttonUp = document.getElementById("buttonUp");
+        var buttonDown = document.getElementById("buttonDown");
+
+        var counter = 0;
+
+        function goUp() {
+            counter++;     
+            myCounter.innerHTML = counter;
+        }
+
+        function goDown() {
+            counter--;
+            myCounter.innerHTML = counter;
+        }
+
+        buttonUp.addEventListener("click", goUp);
+        buttonDown.addEventListener("click", goDown);
+        
+    
+    
+    </script>
+
+    
+</body>
+</html>

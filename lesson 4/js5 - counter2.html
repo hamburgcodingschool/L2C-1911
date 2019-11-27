@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="myCounter1">Counter 1: 0</p>
+    <p id="myCounter2">Counter 2: 0</p>
+
+    <input type="radio" name="radioCounter" id="radio1" checked> Counter 1<br>
+    <input type="radio" name="radioCounter" id="radio2"> Counter 2<br>
+
+    <button id="buttonUp"> + </button>
+    <button id="buttonDown"> - </button>
+
+
+    <script>
+        var myCounter1 = document.getElementById("myCounter1");
+        var myCounter2 = document.getElementById("myCounter2");
+
+        var radio1 = document.getElementById("radio1");
+        var radio2 = document.getElementById("radio2");
+
+        var buttonUp = document.getElementById("buttonUp");
+        var buttonDown = document.getElementById("buttonDown");
+
+        var counter1 = 0;
+        var counter2 = 0;
+
+        function goUp() {
+            if (radio1.checked) {
+                counter1++;
+            } else {
+                counter2++;
+            }
+            updateCounters()
+        }
+
+        function goDown() {
+            if (radio1.checked) {
+                counter1--;
+            } else {
+                counter2--;
+            }
+            updateCounters()
+        }
+
+        function updateCounters() {
+            myCounter1.innerHTML = "Counter 1: " + counter1;
+            myCounter2.innerHTML = "Counter 2: " + counter2;
+        }
+
+        buttonUp.addEventListener("click", goUp);
+        buttonDown.addEventListener("click", goDown);
+        
+    </script>
+
+    
+</body>
+</html>

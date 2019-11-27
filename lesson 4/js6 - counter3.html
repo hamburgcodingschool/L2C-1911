@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="myCounter">...</p>
+
+    <button id="buttonUp"> + </button>
+    <button id="buttonDown"> - </button>
+
+    <script>
+
+        var names = ["Max", "Moritz", "Julia", "Maria", "Jennifer", "Peter", "Klaus"];
+
+        var myCounter = document.getElementById("myCounter");
+        var buttonUp = document.getElementById("buttonUp");
+        var buttonDown = document.getElementById("buttonDown");
+
+        var counter = 0;     
+        
+
+        buttonUp.addEventListener("click", function () {
+            if (counter >= names.length -1) {
+                return;
+            }
+            counter++;
+            updateNames();
+        });
+
+        buttonDown.addEventListener("click", function () {
+            if (counter <= 0) {
+                return;
+            }
+            counter--;
+            updateNames();
+        });
+
+
+        function updateNames() {
+            myCounter.innerHTML = names[counter];
+        }
+    
+        updateNames();
+    </script>
+</body>
+</html>
