@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>last button clicked</h3>
+    <div id="myBox">A</div>
+
+    <button id="buttonA" data-my-attr="0">A</button>
+    <button id="buttonB" data-my-attr="10">B</button>
+    <button id="buttonC" data-my-attr="50">C</button>
+
+    <script>
+        var myBox = document.getElementById("myBox");
+        var buttonA = document.getElementById("buttonA");
+        var buttonB = document.getElementById("buttonB");
+        var buttonC = document.getElementById("buttonC");
+
+        function changeLetter() {
+            var c = this.getAttribute("data-my-attr");
+            alert(c);
+            myBox.innerHTML = this.innerHTML;
+        }
+
+        buttonA.addEventListener("click", changeLetter);
+        buttonB.addEventListener("click", changeLetter);
+        buttonC.addEventListener("click", changeLetter);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>some title</h1>
+    
+    <p>some content!</p>
+    
+    <button id="addButton">Add new Color</button>
+
+    <ul id="myColors"></ul>
+
+    <script>
+        function refreshVisualContent() {
+            var newListContent = "";
+            for (var i = 0; i < colors.length; i++) {
+                newListContent += "<li>" + colors[i] + "</li>";
+            }
+            myColors.innerHTML = newListContent;
+        }
+
+        var colors = ["Yellow", "Blue", "Pink", "White", "Green", "Red"];
+    
+        var myColors = document.getElementById("myColors");
+        var addButton = document.getElementById("addButton");
+        addButton.addEventListener("click", function() {
+            var newColor = "Blah..."; // prompt the user instead
+            colors.push(newColor);
+            refreshVisualContent();
+        });
+
+        refreshVisualContent(); 
+    </script>
+</body>
+</html>
