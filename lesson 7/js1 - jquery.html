@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <p id="p1">hello</p>
+    <button id="button1">Click me! 😀</button>
+
+
+    <script>
+
+        // var button1 = document.getElementById("button1");
+        // button1.addEventListener("click", function () {
+        //     alert("Hi!");
+        // });
+
+        // jQuery("#button1").click(function () {
+        //     alert("Hi!");
+        // });
+
+        $("#button1").click(function () {
+            $("#p1").html("some new text!!!");
+        });
+
+    </script>
+</body>
+</html>

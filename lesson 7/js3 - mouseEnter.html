@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: #F00;
+        }
+        #box2 {
+            width: 100px;
+            height: 100px;
+            background-color: #0F0;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="box1" class="boxes"></div>
+    <div id="box2" class="boxes"></div>
+    <script>
+        $(".boxes").mouseenter(function () {
+            $(this).animate({
+                width: 200,
+                height: 200
+            });
+        });
+
+        $(".boxes").mouseleave(function () {
+            $(this).animate({
+                width: 100,
+                height: 100
+            });
+        });
+
+    </script>
+</body>
+</html>

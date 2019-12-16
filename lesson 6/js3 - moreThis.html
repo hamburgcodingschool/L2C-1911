@@ -15,12 +15,16 @@
         function refreshVisualContent() {
             var newListContent = "";
             for (var i = 0; i < colors.length; i++) {
-                newListContent += "<button id='b" + i + "'>" + colors[i] + "</button>";
+                newListContent += "<button class='my-buttons' data-pos='" + i +"'>" + colors[i] + "</button>";
             }
             myButtonBox.innerHTML = newListContent;
-            document.getElementById("b0").addEventListener("click", function() {
-                alert("hi");
-            });
+            var myButtons = document.getElementsByClassName("my-buttons");
+            for (var i = 0; i < myButtons.length; i++) {
+                myButtons[i].addEventListener("click", function() {
+                    var pos = this.getAttribute("data-pos");
+                    alert(colors[pos]);
+                });
+            }
         }
 
         var colors = ["Yellow", "Blue", "Pink", "White", "Green", "Red"];
