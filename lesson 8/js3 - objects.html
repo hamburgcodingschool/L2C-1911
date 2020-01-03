@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Object in Javascript is the same as a Dictionary or Map in other languages    
+        // holds many values like an Array but the index is a String
+
+        let person1 = {
+            "name": "Helder",
+            "age": 38,
+            "city": "Hamburg",
+            "hasKids": false
+        };
+
+        let person2 = {
+            "name": "Joe",
+            "age": 30,
+            "city": "N.Y.",
+            "hasKids": true
+        };
+
+        // print the name and city of the youngest
+
+        // if (person1.age < person2.age) {
+        //     document.write(person1.name + " from " + person1.city + "<br>");
+        // } else {
+        //     document.write(person2.name + " from " + person2.city + "<br>");
+        // }
+
+        // NOW MORE
+
+        let people = [
+            person1,
+            person2,
+            {
+                "name": "Louise",
+                "age": 51,
+                "city": "Paris",
+                "hasKids": true
+            },
+            {
+                "name": "Pepito",
+                "age": 10,
+                "city": "Madrid",
+                "hasKids": false
+            },
+            {
+                "name": "Martha",
+                "age": 35,
+                "city": "London",
+                "hasKids": true
+            }
+        ];
+        
+        let youngestPerson = people[0];
+
+        for (let i = 0; i < people.length; i++) {
+            if (people[i].age < youngestPerson.age) {
+                youngestPerson = people[i];
+            }
+        }
+        document.write(youngestPerson.name + " from " + youngestPerson.city + "<br>");
+
+        // HOMEWORK
+        // how many people have kids?
+
+    </script>
+</body>
+</html>

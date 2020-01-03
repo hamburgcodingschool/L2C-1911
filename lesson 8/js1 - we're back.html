@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // print all the names
+        // even names in blue
+        // odd names in green
+        
+        let names = ["Bob", "Joe", "Martha", "Sue", "Donald", "Hugh"];
+
+        let text = "";
+
+        for (let i = 0; i < names.length; i++) {
+            if (i % 2 == 0) {
+                text += '<span style="color: blue">' + names[i] + "</span><br>";
+            } else {
+                text += '<span style="color: green">' + names[i] + "</span><br>";
+            }
+        }
+        document.write(text);
+    
+    </script>
+</body>
+</html>

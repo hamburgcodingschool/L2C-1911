@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let aMatrix = [
+            [1, 2, 3, 4],
+            [5, 6, 7, 8],
+            [9, 10, 11, 12],
+            [13, 14, 15, 16]
+        ];    
+        // document.write(aMatrix[2][1]);
+
+        // change position (0, 0) to 20
+        aMatrix[0][0] = 20;
+
+        // print all the elements of the matrix on screen
+
+        for (let i = 0; i < aMatrix.length; i++) { // i = 2
+            let total = 0;
+
+            let lineArray = aMatrix[i];
+            for (let j = 0; j < lineArray.length; j++) { // j = 0
+                if (j > 0) {
+                    document.write(" + ");
+                }
+                document.write(aMatrix[i][j]);
+                total += aMatrix[i][j];
+            }
+            document.write(" = " + total + "<br>");
+        }
+    </script>
+</body>
+</html>
