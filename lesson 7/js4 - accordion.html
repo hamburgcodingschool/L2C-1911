@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <style>
+    
+    #accordion {
+        width: 50vw;
+        margin: 40px  auto;
+    }
+
+    .section {
+        height: 40px;
+        background-color: #333333;
+        color: white;
+        padding: 8px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .panel {
+        background-color: #f1f1f1;
+        padding: 8px;
+        display: none;
+    }
+
+    #panel1 {
+        display: block;
+    }
+    
+  
+    </style>
+
+</head>
+<body>
+<h2>Nice Accordion</h2>
+
+<div id="accordion">
+
+    <div class="section" id="section1">Section 1</div>
+    <div class="panel" id="panel1">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <div class="section" id="section2">Section 2</div>
+    <div class="panel" id="panel2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <div class="section" id="section3">Section 3</div>
+    <div class="panel" id="panel3">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <div class="section" id="section4">Section 4</div>
+    <div class="panel" id="panel4">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+</div>
+
+<script>
+    // $("#section1").click (function(){
+    //     $( "#section1" ).next().css( "background-color", "red" );;
+    // });
+
+    // $(".section").click (function(){
+    //     $( this ).next().css( "background-color", "red" );;
+    // });
+
+    // $(".section").click (function(){
+    //      $( this ).next().css( "display", "block"  );
+    //  });
+
+
+//     $(".section").click(function(){
+//     $(".panel").slideToggle("slow");
+//   });
+
+$(".section").click(function(){
+    if($(this).next(".panel").is(":visible")) {
+        return;
+    }
+    $(".panel").slideUp("slow");
+    $(this).next(".panel").slideToggle("slow");
+});
+
+
+
+</script>
+
+
+</body>
+</html>
