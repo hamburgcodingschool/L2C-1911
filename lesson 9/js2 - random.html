@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let x = Math.random(); // 0 -> 0.9999999999999
+
+        x = x * 10; // 0 -> 9.9999999999999
+
+        x = Math.floor(x); // 0 -> 9
+
+        x = x + 1; // 1 -> 10
+
+
+        
+        let x = Math.floor(Math.random() * 10) + 1; // 1 -> 10
+
+
+        // const min = 5;
+        // const max = 12;
+        
+        // let x = Math.random();
+
+        // x = x * (max - min + 1); // 0 -> 7.99999
+
+        // x = Math.floor(x); // 0 -> 7
+
+        // x = x + min; // 5 -> 12
+
+        // alert(x);
+
+        // function randomize(min, max) {
+        //     let x = Math.random();
+
+        //     x = x * (max - min + 1); // 0 -> 7.99999
+
+        //     x = Math.floor(x); // 0 -> 7
+
+        //     x = x + min; // 5 -> 12
+
+        //     return x;
+        // }
+
+        function randomize(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        let counters = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+        for (let i = 0; i < 10; i++) {
+            let randomNumber = randomize(0, 9);
+            counters[randomNumber]++;
+        }
+
+        document.write(counters);
+        
+
+
+    </script>
+</body>
+</html>
