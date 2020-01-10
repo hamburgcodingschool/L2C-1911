@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="gamePhraseBox"></div>
+    <div id="letterBox"></div>
+    <div id="livesBox"></div>
+    <script>
+        function dashItUp(sentence) {
+            let dashedSentence = "";
+            for (let i = 0; i < sentence.length; i++) {
+                if (sentence[i] == " ") {
+                    dashedSentence += " ";
+                } else {
+                    dashedSentence += "-";
+                }
+            }
+            return dashedSentence;
+        }
+
+        function letterExists(letter) {
+            let letterExists = false;
+            for (let i = 0; i < secretPhrase.length; i++) {
+                let difference = letter.localeCompare(secretPhrase[i], "en", { sensitivity: "base" });
+                if (difference == 0) {
+                    gamePhrase = replaceLetter(gamePhrase, secretPhrase[i], i);
+                    letterExists = true;
+                }
+            }
+            if (!letterExists) {
+                lives--;
+            }
+            updateUI();
+        }
+
+        function replaceLetter(sentence, newLetter, position) {
+
+            let leftPart = sentence.substr(0, position);
+            let rightPart = sentence.substr(position + 1);
+        
+            return leftPart + newLetter + rightPart;
+        }
+
+        function updateUI() {
+            gamePhraseBox.innerHTML = gamePhrase;
+            livesBox.innerHTML = lives;
+        }
+
+        const secretPhrase = "Gotham City";
+        let gamePhrase = dashItUp(secretPhrase);
+        let lives = 6;
+
+        const letterBox = document.getElementById("letterBox");
+        const gamePhraseBox = document.getElementById("gamePhraseBox");
+        const livesBox = document.getElementById("livesBox");
+
+        const abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        for (let i = 0; i < abc.length; i++) {
+            let buttonText = "<button class='letterButton'>" + abc[i] + "</button>";
+            letterBox.innerHTML += buttonText;
+        }
+
+        const buttons = document.getElementsByClassName("letterButton");
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener("click", function() {
+                const letter = this.innerText;
+                // alert(letter);
+
+                letterExists(letter);
+            });
+        }
+
+        updateUI();
+    </script>
+</body>
+</html>

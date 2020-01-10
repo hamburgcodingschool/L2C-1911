@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // create a function that lets the user know
+        // how many times a letter appears in a sentence
+
+
+        let letter = 'u';
+        let sentence = 'Überaschung';
+
+        let letterCounter = 0;
+
+        for (let i = 0; i < sentence.length; i++) {
+            let difference = letter.localeCompare(sentence[i], "en", { sensitivity: "base" });
+            if (difference == 0) {
+                letterCounter++;
+            }
+        }
+        document.write(letterCounter);
+        
+
+        // let example1 = "a";
+        // let example2 = "Ä";
+
+        // let result = example1.localeCompare(example2, "en", { sensitivity: "base" });
+
+        // alert(result);
+    </script>
+</body>
+</html>
